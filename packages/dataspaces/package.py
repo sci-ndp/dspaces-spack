@@ -21,11 +21,14 @@ class Dataspaces(CMakePackage):
 
     depends_on('mpi')
     depends_on('py-numpy', when='+pybind')
+    depends_on('python@3.6:', when='+pybind')
     depends_on('swig', when='+pybind')
     depends_on('cmake', type="build")
     depends_on('mochi-margo')
     depends_on('pkgconfig', type="build")
     depends_on('libtool', type="build")
+
+    extends('python')
 
     def cmake_args(self):
         """Populate cmake arguments for Dspaces."""
@@ -33,3 +36,4 @@ class Dataspaces(CMakePackage):
         extra_args.extend(['-DCMAKE_CXX_COMPILER=%s' % self.spec['mpi'].mpicxx])
         extra_args.extend(['-DENABLE_TESTS=ON'])
         return extra_args
+

@@ -36,6 +36,6 @@ class Dataspaces(CMakePackage):
         extra_args = ['-DCMAKE_C_COMPILER=%s' % self.spec['mpi'].mpicc]
         extra_args.extend(['-DCMAKE_CXX_COMPILER=%s' % self.spec['mpi'].mpicxx])
         extra_args.extend(['-DENABLE_TESTS=ON'])
-        exsa_argss.extend(['-DENABLE_EXAMPLES=ON'])
+        extra_args.extend(['-DENABLE_EXAMPLES=ON'])
         return extra_args
 

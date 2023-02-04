@@ -23,6 +23,7 @@ class Dataspaces(CMakePackage):
     depends_on('mpi')
     depends_on('py-numpy', when='+pybind')
     depends_on('python@3.6:', when='+pybind')
+    depends_on('py-mpi4py', when='+pybind')
     depends_on('swig', when='+pybind')
     depends_on('cmake', type="build")
     depends_on('mochi-margo')

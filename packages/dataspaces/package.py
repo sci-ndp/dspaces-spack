@@ -16,6 +16,7 @@ class Dataspaces(CMakePackage):
     maintainers = ['pradsubedi', 'pdavis']
 
     version('master', branch='master', submodules=True)
+    version('netcdf', branch='netcdf', submodules=True)
 
     variant('pybind', default=True, description='build Python bindings')
     variant('examples', default=True, description='build dspaces examples')
@@ -29,6 +30,7 @@ class Dataspaces(CMakePackage):
     depends_on('mochi-margo')
     depends_on('pkgconfig', type="build")
     depends_on('libtool', type="build")
+    depends_on('lz4')
 
     extends('python')
 

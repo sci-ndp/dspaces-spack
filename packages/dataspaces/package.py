@@ -31,6 +31,7 @@ class Dataspaces(CMakePackage):
     depends_on('pkgconfig', type="build")
     depends_on('libtool', type="build")
     depends_on('lz4')
+    depends_on('curl')
 
     extends('python')
 
@@ -42,3 +43,12 @@ class Dataspaces(CMakePackage):
         extra_args.extend(['-DENABLE_EXAMPLES=ON'])
         return extra_args
 
+    # To enable this package add it to the LD_LIBRARY_PATH
+    def setup_run_environment(self, env):
+        dataspaces_home = self.spec["dataspaces"].prefix
+        env.prepend_path("LD_LIBRARY_PATH", dataspaces_home.lib)
+
+    # To enable this package add it to the LD_LIBRARY_PATH
+    def setup_dependent_run_environment(self, env, dependent_spec):
+        dataspaces_home = self.spec["dataspaces"].prefix
+        env.prepend_path("LD_LIBRARY_PATH", dataspaces_home.lib)

@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack import *
+from spack.package import *
 
 
 class Dataspaces(CMakePackage):
@@ -13,7 +13,7 @@ class Dataspaces(CMakePackage):
     url = ""
     git = "https://github.com/rdi2dspaces/dspaces.git"
 
-    maintainers = ['pradsubedi', 'pdavis']
+    maintainers = ['pradsubedi', 'pdavis', 'bozhang-hpc']
 
     version('master', branch='master', submodules=True)
     version('netcdf', branch='netcdf', submodules=True)

@@ -11,7 +11,7 @@ class Dataspaces(CMakePackage):
 
     homepage = "wwww.dataspaces.org"
     url = ""
-    git = "https://github.com/rdi2dspaces/dspaces.git"
+    git = "https://github.com/sci-ndp/dspaces.git"
 
     maintainers = ['pradsubedi', 'pdavis', 'bozhang-hpc']
 
